@@ -1,0 +1,9 @@
+{
+    "locations": ["Warstein", "Cegled"],
+    "names": {"Warstein":["Krishnan", "Azarmipour", "Foeller", "Putnik", "Kuempel", "Rohlmann", "Piacenza","Hermes","Kumar","Basov","Cavalleri","Elashry","Erlemeyer","Sengupta","Prado"], "Cegled":[]},
+    "category": ["Highlight","Lowlight","For Information","For Clarification"],
+    "topic": {"Warstein":["[I40-Epics@WAR]","[Capa-Epics@WAR]","[Operational-Epics@WAR]","[Other-Epics@WAR]",""], "Cegled":[]},
+    "outputfilename" : "EMA_BE_EA_WAR_",
+    "presentername" : "Christian Kuempel"
+  }
+  
