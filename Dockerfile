@@ -21,4 +21,4 @@ ENV LANG=C.UTF-8
 ENV APP_MODULE="app.py"
 
 # Start the Streamlit app
-CMD ["streamlit", "run", "--server.enableCORS", "false", "$APP_MODULE"]
+CMD ["streamlit run app.py"]
