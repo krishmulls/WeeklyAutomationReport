@@ -18,7 +18,7 @@ EXPOSE 8501
 # Set environment variables
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-ENV APP_MODULE="app.py"
+ENV APP_MODULE="weeklyreport.py"
 
 # Start the Streamlit app
 CMD ["streamlit run app.py"]
