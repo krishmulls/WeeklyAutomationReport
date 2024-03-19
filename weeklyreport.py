@@ -58,15 +58,18 @@ def generate_ppt():
         presentation = Presentation()
         slide = presentation.slides.add_slide(presentation.slide_layouts[5])
         slide.shapes.title.text = f"Weekly Report CW{selected_week}"  
+        print_text_box(slide, 1.2, f"{presentername} \n {current_date}", True, True, 18)
         for sildename, group in grouped:
             slide = presentation.slides.add_slide(presentation.slide_layouts[5]) 
             slide.shapes.title.text = f"Weekly Meeting CW{selected_week}"  
             leftNo = 0.5
             topNo = 1.2
+            print_text_box(slide, topNo, sildename, True, True, 20)
             topics = group.groupby('Topic')
             heightNo = 0.3
             for name, topic in topics:
                 topNo += heightNo
+                print_text_box(slide, topNo, name, True, False, 18)
                 heightNo = 0.3
                 for d in topic['Description']:
                     heightNo += 0.3
@@ -87,7 +90,7 @@ def generate_ppt():
                     font.size = Pt(12)
         slide = presentation.slides.add_slide(presentation.slide_layouts[5])  
         presentation.save(f'{pptfilename}{current_date}.pptx')
-        st.success("The presentation has been generated in the volume mounted to this program")
+        st.success("The presentation has been generated in the volume mounted to this container")
 
     except Exception as e:
         st.error(f"An error occurred while showing the user report: {e}")
@@ -195,6 +198,3 @@ if __name__ == "__main__":
             st.data_editor(combined_df, use_container_width=True, key = "Overall")
     except Exception as e:
         st.error(f"An error occurred in the main block: {e}")
-
-
-
