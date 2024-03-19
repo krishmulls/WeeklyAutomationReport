@@ -20,5 +20,8 @@ ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 ENV APP_MODULE="weeklyreport.py"
 
-# Start the Streamlit app
-CMD ["streamlit run app.py"]
+EXPOSE 8501
+
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+
+ENTRYPOINT ["streamlit", "run", "weeklyreport.py", "--server.port=8501", "--server.address=0.0.0.0"]
